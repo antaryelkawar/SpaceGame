@@ -7,4 +7,13 @@ public class LaserController : MonoBehaviour {
 	void Update () {
         Destroy(this.gameObject, lifetime);
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Asteroids"))
+        {
+            other.gameObject.GetComponent<AsteroidController>().Destruct();
+            Destroy(this.gameObject);
+        }
+    }
 }

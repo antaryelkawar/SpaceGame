@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentVelocity;
     private Vector2 oppositeForce;
 
+    public GameObject gravBeam;
+
     // Use this for initialization
     void Start()
     {
@@ -20,6 +22,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButton(1))
+        {
+            gravBeam.SetActive(true);
+        }
+        else
+        {
+            gravBeam.SetActive(false);
+        }
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(new Vector3(0, 0, 8) * speed * Time.fixedDeltaTime);
