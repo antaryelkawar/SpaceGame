@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fd667892488f57a4383d8cc6159596af
-timeCreated: 1474923813
+timeCreated: 1474988675
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -64,12 +64,12 @@ TextureImporter:
       name: turrets_units_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 262
-        width: 61
-        height: 52
+        x: 2
+        y: 65
+        width: 60
+        height: 62
       alignment: 9
-      pivot: {x: 0.48820072, y: 0.50692046}
+      pivot: {x: 0.50627077, y: 0.38166365}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -77,12 +77,12 @@ TextureImporter:
       name: turrets_units_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 258
-        width: 62
-        height: 60
+        x: 67
+        y: 66
+        width: 59
+        height: 59
       alignment: 9
-      pivot: {x: 0.38136956, y: 0.5}
+      pivot: {x: 0.49362287, y: 0.38521215}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -90,12 +90,12 @@ TextureImporter:
       name: turrets_units_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 193
-        width: 61
-        height: 61
+        x: 130
+        y: 65
+        width: 60
+        height: 62
       alignment: 9
-      pivot: {x: 0.38200837, y: 0.5}
+      pivot: {x: 0.5, y: 0.36345795}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -103,12 +103,12 @@ TextureImporter:
       name: turrets_units_3
       rect:
         serializedVersion: 2
-        x: 66
-        y: 194
-        width: 59
-        height: 59
+        x: 194
+        y: 64
+        width: 61
+        height: 63
       alignment: 9
-      pivot: {x: 0.38410795, y: 0.512199}
+      pivot: {x: 0.5, y: 0.42833346}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -116,12 +116,12 @@ TextureImporter:
       name: turrets_units_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 130
-        width: 61
+        x: 259
+        y: 66
+        width: 59
         height: 60
-      alignment: 9
-      pivot: {x: 0.3761088, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -129,12 +129,12 @@ TextureImporter:
       name: turrets_units_5
       rect:
         serializedVersion: 2
-        x: 65
-        y: 130
-        width: 62
-        height: 60
-      alignment: 9
-      pivot: {x: 0.39831677, y: 0.5}
+        x: 6
+        y: 1
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -142,12 +142,12 @@ TextureImporter:
       name: turrets_units_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 65
-        width: 63
+        x: 66
+        y: 1
+        width: 61
         height: 61
       alignment: 9
-      pivot: {x: 0.42002758, y: 0.5}
+      pivot: {x: 0.503084, y: 0.37355566}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -155,12 +155,12 @@ TextureImporter:
       name: turrets_units_7
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
+        x: 130
+        y: 1
         width: 60
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3797237}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

@@ -11,24 +11,24 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentVelocity;
     private Vector2 oppositeForce;
 
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(new Vector3(0, 0, 15) * speed * Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(-new Vector3(0, 0, 15) * speed * Time.deltaTime);
-        }
-
-    }
     // Use this for initialization
     void Start()
     {
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(new Vector3(0, 0, 8) * speed * Time.fixedDeltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-new Vector3(0, 0, 8) * speed * Time.fixedDeltaTime);
+        }
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -44,11 +44,11 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                rb2d.AddForce(-transform.up * speed * Time.deltaTime * 50);
+                rb2d.AddForce(-transform.up * speed * Time.fixedDeltaTime * 50);
             }
             else if (Input.GetKey(KeyCode.W))
             {
-                rb2d.AddForce(transform.up * speed * Time.deltaTime * 100);
+                rb2d.AddForce(transform.up * speed * Time.fixedDeltaTime * 100);
             }
         }
 
