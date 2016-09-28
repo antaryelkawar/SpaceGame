@@ -22,7 +22,7 @@ public class TargettingController : MonoBehaviour
     }
     void FireLaser()
     {
-        Rigidbody2D laserClone = (Rigidbody2D)Instantiate(laser, transform.position, transform.rotation);
+        Rigidbody2D laserClone = (Rigidbody2D)Instantiate(laser, transform.position + transform.up.normalized, transform.rotation);
         //laserClone.velocity = transform.parent.GetComponent<Rigidbody2D>().velocity;
         laserClone.AddForce(transform.up * speed * Time.deltaTime * 100);
     }

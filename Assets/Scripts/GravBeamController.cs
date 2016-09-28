@@ -15,7 +15,7 @@ public class GravBeamController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Minerals"))
+        if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Mineral1") || other.gameObject.CompareTag("Mineral2") || other.gameObject.CompareTag("Mineral3"))
         {
             Vector3 awayVelocity = CalculateTangentialVelocity(other);
             Rigidbody2D rb2d = other.GetComponentInParent<Rigidbody2D>();
@@ -26,7 +26,7 @@ public class GravBeamController : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Minerals"))
+        if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Mineral1") || other.gameObject.CompareTag("Mineral2") || other.gameObject.CompareTag("Mineral3"))
         {
             Vector3 awayVelocity = CalculateTangentialVelocity(other);           
             Rigidbody2D rb2d = other.GetComponentInParent<Rigidbody2D>();
