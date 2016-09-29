@@ -10,10 +10,12 @@ public class AsteroidController : MonoBehaviour {
     public Rigidbody2D mineral3;
 
     public int rotation;
+
+    public Animator anim;
 	// Use this for initialization
 	void Start () {
         rotation = Random.Range(-20, 20);
-
+        anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -33,6 +35,7 @@ public class AsteroidController : MonoBehaviour {
 
     public void Destruct()
     {
+        GetComponent<Collider2D>().enabled = false;
         int medCount = 0, smallCount = 0, minCount1 = 0, minCount2 = 0, minCount3 = 0;
         if(mediumAsteroid != null)
         {
@@ -55,15 +58,19 @@ public class AsteroidController : MonoBehaviour {
             minCount3 = Random.Range(0, 2);
         }
         GenerateSmallerBodies(medCount, smallCount, minCount1, minCount2, minCount3);
+        
+    }
+    public void DeleteAsteroid()
+    {
         gameObject.SetActive(false);
     }
     void GenerateSmallerBodies(int medium, int small, int mineralCnt1, int mineralCnt2, int mineralCnt3)
     {
-        GenerateType(medium, mediumAsteroid, 10f);
-        GenerateType(small, smallAsteroid, 5f);
-        GenerateType(mineralCnt1, mineral1, 0.1f);
-        GenerateType(mineralCnt2, mineral2, 0.1f);
-        GenerateType(mineralCnt3, mineral3, 0.1f);
+        GenerateType(medium, mediumAsteroid, 20f);
+        GenerateType(small, smallAsteroid, 10f);
+        GenerateType(mineralCnt1, mineral1, 0.5f);
+        GenerateType(mineralCnt2, mineral2, 0.5f);
+        GenerateType(mineralCnt3, mineral3, 0.5f);
     }
 
     void GenerateType(int count, Rigidbody2D type, float force)
