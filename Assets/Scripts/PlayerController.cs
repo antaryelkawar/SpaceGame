@@ -13,9 +13,17 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gravBeam;
 
+    public GameObject leftEngine;
+    public GameObject rightEngine;
+    public GameObject leftThruster;
+    public GameObject RightThruster;
     // Use this for initialization
     void Start()
     {
+        leftThruster.SetActive(false);
+        RightThruster.SetActive(false);
+        leftEngine.SetActive(false);
+        rightEngine.SetActive(false);
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -28,16 +36,62 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            gravBeam.SetActive(false);
+            gravBeam.GetComponent<Animator>().SetTrigger("EndBeam");
         }
         if (Input.GetKey(KeyCode.A))
         {
+            RightThruster.SetActive(true);
             transform.Rotate(new Vector3(0, 0, 8) * speed * Time.fixedDeltaTime);
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            RightThruster.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
+            leftThruster.SetActive(true);
             transform.Rotate(-new Vector3(0, 0, 8) * speed * Time.fixedDeltaTime);
+        }
+
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            leftThruster.SetActive(false);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            leftThruster.SetActive(true);
+            RightThruster.SetActive(true);
+            leftEngine.SetActive(true);
+            rightEngine.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            leftThruster.SetActive(false);
+            RightThruster.SetActive(false);
+            leftEngine.SetActive(false);
+            rightEngine.SetActive(false);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            leftThruster.SetActive(true);
+            RightThruster.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            leftThruster.SetActive(false);
+            RightThruster.SetActive(false);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            leftEngine.SetActive(true);
+            rightEngine.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.W))
+        {
+            leftEngine.SetActive(false);
+            rightEngine.SetActive(false);
         }
     }
 
@@ -54,7 +108,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                rb2d.AddForce(-transform.up * speed * Time.fixedDeltaTime * 50);
+                rb2d.AddForce(-transform.up * speed * Time.fixedDeltaTime * 30);
             }
             else if (Input.GetKey(KeyCode.W))
             {

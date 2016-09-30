@@ -35,6 +35,7 @@ public class AsteroidController : MonoBehaviour {
 
     public void Destruct()
     {
+        GetComponent<Rigidbody2D>().isKinematic = true;
         GetComponent<Collider2D>().enabled = false;
         int medCount = 0, smallCount = 0, minCount1 = 0, minCount2 = 0, minCount3 = 0;
         if(mediumAsteroid != null)
@@ -62,7 +63,7 @@ public class AsteroidController : MonoBehaviour {
     }
     public void DeleteAsteroid()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
     void GenerateSmallerBodies(int medium, int small, int mineralCnt1, int mineralCnt2, int mineralCnt3)
     {

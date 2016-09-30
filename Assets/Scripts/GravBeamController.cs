@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GravBeamController : MonoBehaviour {
 
+    public float gravForce = 10f;
 	// Use this for initialization
 	void Start () {
 	
@@ -13,14 +14,19 @@ public class GravBeamController : MonoBehaviour {
 
     }
 
+    void DisableBeam()
+    {
+        gameObject.SetActive(false);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Asteroids") || other.gameObject.CompareTag("Mineral1") || other.gameObject.CompareTag("Mineral2") || other.gameObject.CompareTag("Mineral3"))
         {
             Vector3 awayVelocity = CalculateTangentialVelocity(other);
             Rigidbody2D rb2d = other.GetComponentInParent<Rigidbody2D>();
-            rb2d.AddForce(awayVelocity * 2, ForceMode2D.Force);
-            rb2d.AddForce((transform.position - other.transform.position) * 10f * Time.smoothDeltaTime);
+            rb2d.AddForce(-awayVelocity * 2, ForceMode2D.Force);
+            rb2d.AddForce((transform.position - other.transform.position) * gravForce * Time.smoothDeltaTime);
         }
     }
 
@@ -31,7 +37,7 @@ public class GravBeamController : MonoBehaviour {
             Vector3 awayVelocity = CalculateTangentialVelocity(other);           
             Rigidbody2D rb2d = other.GetComponentInParent<Rigidbody2D>();
             rb2d.AddForce(-awayVelocity * 2, ForceMode2D.Force);
-            rb2d.AddForce((transform.position - other.transform.position) * 10f * Time.smoothDeltaTime);
+            rb2d.AddForce((transform.position - other.transform.position) * gravForce * Time.smoothDeltaTime);
         }
     }
 

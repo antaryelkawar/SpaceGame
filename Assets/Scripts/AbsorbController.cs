@@ -13,17 +13,17 @@ public class AbsorbController : MonoBehaviour {
         if (other.gameObject.CompareTag("Mineral1"))
         {
             mineral1.value++;
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Mineral2"))
         {
             mineral2.value++;
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Mineral3"))
         {
             mineral3.value++;
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
     }
 }
